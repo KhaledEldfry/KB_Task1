@@ -2,6 +2,10 @@
    (slot type)
 )
 
+(assert (animal (type dog)))
+(assert (animal (type cat)))
+(assert (animal (type horse)))
+
 (defrule check_animal
   ?a <- (animal (type ?t))
   (test (neq ?t dog))
@@ -9,7 +13,3 @@
   =>
   (printout t "Animal type is: " ?t crlf)
 )
-
-(assert (animal (type dog)))
-(assert (animal (type cat)))
-(assert (animal (type horse)))
